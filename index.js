@@ -47,7 +47,10 @@ let addPhone = () => {
     phonePriceInput.value == "" ||
     phoneQtyInput.value == ""
   ) {
-    alert("Please Fill The empty Fields");
+    Swal.fire({
+      title: `Some Fields Were Empty Please fill All Fields`,
+      icon: "error",
+    });
     return;
   }
 
@@ -59,6 +62,11 @@ let addPhone = () => {
 
   phones.push(newPhone);
   showPhones();
+
+  Swal.fire({
+    title: `${phoneNameInput.value} added Successfully !!`,
+    icon: "success",
+  });
 
   phoneNameInput.value = "";
   phonePriceInput.value = "";
