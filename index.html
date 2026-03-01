@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 22</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+      integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-between p-5 align-content-center flex-column gap-5"
+    >
+      <h1 class="text-center text-info">Phones Products</h1>
+      <div class="col-12 d-flex gap-3">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-success col-4"
+          data-bs-toggle="modal"
+          data-bs-target="#addNewPhone"
+        >
+          Add New Phone
+        </button>
+
+        <!-- Add Phone Modal -->
+        <div
+          class="modal fade"
+          id="addNewPhone"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-success">
+                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+                  Add New Phone
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body p-0">
+                <div
+                  class="col-12 shadow p-3 border-1 rounded d-flex gap-3 flex-column"
+                >
+                  <input
+                    type="text"
+                    placeholder="Please Enter Phone Name"
+                    class="form-control"
+                    id="phoneNameInput"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Please Enter Phone Price"
+                    class="form-control"
+                    id="phonePriceInput"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Please Enter Phone Qty"
+                    class="form-control"
+                    id="phoneQtyInput"
+                  />
+                  <button
+                    class="addBtn btn btn-success col-12"
+                    onclick="addPhone()"
+                    data-bs-dismiss="modal"
+                  >
+                    Add New Phone
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table
+        id="phoneData"
+        class="table table-bordered table-dark table-striped-columns"
+      >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>item name</th>
+            <th>item price</th>
+            <th>item qty</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Update Phone Modal -->
+    <div
+      class="modal fade"
+      id="editPhone"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">
+              Update Phone
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div
+              class="col-12 shadow p-3 border-1 rounded d-flex gap-3 flex-column"
+            >
+              <input
+                type="text"
+                placeholder="Please Enter Phone Name"
+                class="form-control"
+                id="phoneNameInputEdit"
+              />
+              <input
+                type="number"
+                placeholder="Please Enter Phone Price"
+                class="form-control"
+                id="phonePriceInputEdit"
+              />
+              <input
+                type="number"
+                placeholder="Please Enter Phone Qty"
+                class="form-control"
+                id="phoneQtyInputEdit"
+              />
+              <button
+                class="addBtn btn btn-warning col-12"
+                onclick="editPhone()"
+                data-bs-dismiss="modal"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
